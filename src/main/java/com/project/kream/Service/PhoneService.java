@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -12,6 +13,15 @@ import java.util.Random;
 @Service
 @RequiredArgsConstructor
 public class PhoneService {
+
+    @Value("${sms.api-key}")
+    private String apiKey;
+
+    @Value("${sms.api-secret}")
+    private String apiSecret;
+
+    @Value("${sms.from}")
+    private String from;
 
     public void sendSms(String phoneNum){
 
@@ -25,13 +35,11 @@ public class PhoneService {
     }
 
     public void certifiedPhoneNumber(String phoneNumber, String cerNum) {
-        String api_key = "********";
-        String api_secret = "********";
-        Message coolsms = new Message(api_key, api_secret);
+        Message coolsms = new Message(apiKey, apiSecret);
 
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("to", phoneNumber);
-        params.put("from", "********");
+        params.put("from", from);
         params.put("type", "SMS");
         params.put("text", "KREAM 사이트를 이용하세요. https://kream.co.kr/");
         params.put("app_version", "test app 1.2");

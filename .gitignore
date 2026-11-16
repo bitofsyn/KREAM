@@ -1,0 +1,10 @@
+# 개인정보/비밀값 (커밋 금지)
+application-local.properties
+application-local.yml
+application-secret.properties
+*.env
+.env
+Wallet_*/
+/build/
+.gradle/
+.idea/

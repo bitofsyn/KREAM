@@ -1,0 +1,9 @@
+# 이 파일을 application-local.properties 로 복사한 뒤 실제 값을 입력하세요.
+sms.api-key=YOUR_SMS_API_KEY
+sms.api-secret=YOUR_SMS_API_SECRET
+sms.from=YOUR_SENDER_NUMBER
+spring.datasource.url=YOUR_DB_URL
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+spring.mail.username=YOUR_MAIL_ADDRESS
+spring.mail.password=YOUR_MAIL_APP_PASSWORD
