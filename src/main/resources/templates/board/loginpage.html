@@ -69,9 +69,9 @@
 <script type="text/javascript" th:src="@{/lib/js/pjs_header_nav.js}"></script>
 <script th:src="@{/lib/js/loginpage_mypage_all.js}" type="text/javascript"></script>
 <script th:src="@{/lib/js/login.js}" type="text/javascript"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
     var myDomain = window.location.href;
-    var naver_id_login = new naver_id_login("NAVER_CLIENT_ID", "http://www.naver.com");
+    var naver_id_login = new naver_id_login(/*[[${@environment.getProperty('naver.client-id')}]]*/ "NAVER_CLIENT_ID", "http://www.naver.com");
     var state = naver_id_login.getUniqState();
     naver_id_login.setButton("green", 1,40);
     naver_id_login.setDomain("http://127.0.0.1:9090/naverLogin");

@@ -49,7 +49,7 @@ public class ProductService extends BaseService<ProductApiRequest, ProductApiRes
         Product newproEntity = baseRepository.save(request.toEntity());
 
         List<MultipartFile> fileList = mutilRequest.getFiles("files");
-        String path = "PROJECT_DIR\\src\\main\\resources\\static\\lib\\product\\";
+        String path = System.getProperty("user.dir") + "/src/main/resources/static/lib/product/";
 
         for(MultipartFile mf : fileList){
             if(mf.getSize() >0){
@@ -78,7 +78,7 @@ public class ProductService extends BaseService<ProductApiRequest, ProductApiRes
 
     public Header<ProductApiResponse> upload(Long id, MultipartHttpServletRequest mutilRequest){
         List<MultipartFile> fileList = mutilRequest.getFiles("files");
-        String path = "PROJECT_DIR\\src\\main\\resources\\static\\lib\\product\\";
+        String path = System.getProperty("user.dir") + "/src/main/resources/static/lib/product/";
 
         List<ProImg> proImgList = proimgRepository.findAllByProductId(id);
         proImgList.stream().map(proImg ->{

@@ -2,6 +2,7 @@
 sms.api-key=YOUR_SMS_API_KEY
 sms.api-secret=YOUR_SMS_API_SECRET
 sms.from=YOUR_SENDER_NUMBER
+naver.client-id=YOUR_NAVER_CLIENT_ID
 spring.datasource.url=YOUR_DB_URL
 spring.datasource.username=YOUR_DB_USERNAME
 spring.datasource.password=YOUR_DB_PASSWORD

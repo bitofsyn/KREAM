@@ -5,8 +5,8 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-<script type="text/javascript">
-    var naver_id_login = new naver_id_login("NAVER_CLIENT_ID", "http://www.naver.com");
+<script type="text/javascript" th:inline="javascript">
+    var naver_id_login = new naver_id_login(/*[[${@environment.getProperty('naver.client-id')}]]*/ "NAVER_CLIENT_ID", "http://www.naver.com");
     // 접근 토큰 값 출력
     alert(naver_id_login.oauthParams.access_token);
     // 네이버 사용자 프로필 조회
